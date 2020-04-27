@@ -1,4 +1,4 @@
-# (myapp_nuxtjs_vuetify)
+# myapp_nuxtjs_vuetify
 
 > My majestic Nuxt.js project
 
