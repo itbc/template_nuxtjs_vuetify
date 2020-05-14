@@ -1,9 +1,10 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
+      src="https://picsum.photos/1920/1080?random"
       fixed
       app
     >
@@ -26,6 +27,8 @@
     </v-navigation-drawer>
     <v-app-bar
       :clipped-left="clipped"
+      color="blue"
+      scroll-target="#scrolling-techniques-2"
       fixed
       app
     >
@@ -48,7 +51,16 @@
       >
         <v-icon>mdi-minus</v-icon>
       </v-btn>
-      <v-toolbar-title v-text="title" />
+
+      <v-btn
+        color="primary"
+        nuxt
+        to="/"
+      >
+        Home
+      </v-btn>
+      <!-- <v-toolbar-title v-text="title"> -->
+      <!-- </v-toolbar-title> -->
       <v-spacer />
       <v-btn
         icon
@@ -57,7 +69,7 @@
         <v-icon>mdi-menu</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-content>
+    <v-content class="white">
       <v-container>
         <nuxt />
       </v-container>
@@ -81,6 +93,7 @@
     </v-navigation-drawer>
     <v-footer
       :fixed="fixed"
+      color="primary"
       app
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
@@ -98,7 +111,7 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Home',
           to: '/'
         },
         {
@@ -107,14 +120,14 @@ export default {
           to: '/inspire'
         },
         {
-          icon: 'mdi-apps',
-          title: 'Template',
-          to: '/template'
-        },
-        {
           icon: 'mdi-chart-bubble',
           title: 'Chart',
           to: '/template_chart'
+        },
+        {
+          icon: 'mdi-apps',
+          title: 'Template',
+          to: '/template'
         },
         {
           icon: 'mdi-apps',
@@ -140,7 +153,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Vue Dashboard'
     }
   }
 }
